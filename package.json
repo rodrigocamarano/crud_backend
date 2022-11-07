@@ -7,5 +7,10 @@
     "name": "Rodrigo Camarano",
     "email": "rodrigocamarano@gmail.com"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+  }
 }
