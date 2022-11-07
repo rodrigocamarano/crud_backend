@@ -1,0 +1,9 @@
+yarn.lock
+package-lock.json
+
+# Environment variables
+.env
+nodemon.json
+
+# Dependency directories
+node_modules

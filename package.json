@@ -1,0 +1,11 @@
+{
+  "name": "crud_backend",
+  "version": "1.0.0",
+  "description": "CRUD backend databases",
+  "repository": "https://github.com/rodrigocamarano/crud_backend",
+  "author": {
+    "name": "Rodrigo Camarano",
+    "email": "rodrigocamarano@gmail.com"
+  },
+  "license": "MIT"
+}
