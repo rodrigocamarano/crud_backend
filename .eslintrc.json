@@ -18,6 +18,7 @@
         "linebreak-style": "off",
         "import/no-unresolved": "off",
         "import/extensions": "off",
-        "no-console": "off"
+        "no-console": "off",
+        "max-len": "off"
     }
 }
