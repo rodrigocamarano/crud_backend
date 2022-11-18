@@ -24,6 +24,7 @@
         "lines-between-class-members": "off",
         "object-curly-newline": "off",
         "import/no-import-module-exports": "off",
-        "no-restricted-syntax": "off"
+        "no-restricted-syntax": "off",
+        "indent": "off"
     }
 }
