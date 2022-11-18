@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev src/app.ts",
-    "test": "jest"
+    "test": "jest --setupFiles dotenv/config"
   },
   "license": "MIT",
   "devDependencies": {
