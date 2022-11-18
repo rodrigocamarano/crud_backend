@@ -40,7 +40,7 @@ const request = (table: string, schema: string, req: Request, res: Response, nex
   if (!scm) {
     return res.status(404).json({ error: { message: `Table '${table}' not found.` } });
   }
-  if (Object.keys(scm.properties).sort().join() !== Object.keys(req.body).sort().join()) {
+  if (Object.keys(scm.properties).sort().join() !== Object.keys(req.body).sort().join() && (req.method === 'POST' || req.method === 'PUT')) {
     return res.status(400).json({ error: { message: `'${req.params.table}' table only allow '${Object.keys(scm.properties).join(', ')}' in body.` } });
   }
   const methodToValidete = () => {
