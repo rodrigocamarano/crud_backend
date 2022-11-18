@@ -1,0 +1,17 @@
+{
+  "required": {
+    "id": "'Id' field is missing.",
+    "description": "description field is missing."
+  },
+  "type": {
+    "id": "'Id' must be an integer.",
+    "description": "'Description' must be an string."
+  },
+  "empty": {
+    "id": "'Id' is empty.",
+    "description": "'Description' is empty."
+  },
+  "maxLength": {
+    "description": "'Description' not have more than 45 characters."
+  }
+}

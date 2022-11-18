@@ -3,12 +3,14 @@ import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
 
+import routes from './routes';
+
 const server = express();
 server.use(helmet());
 server.use(compression());
 server.use(cors());
 server.use(express.json());
 
-server.get('/', (request, response) => response.json({ status: 'Ok' }));
+server.use('/', routes);
 
 export default server;
