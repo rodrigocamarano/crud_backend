@@ -1,0 +1,37 @@
+{
+  "invalid_types": {
+    "insert": {
+      "description": false
+    },
+    "select": {
+      "id": false
+    },
+    "update": {
+      "id": false,
+      "description": false
+    },
+    "delete": {
+      "id": false
+    }
+  },
+  "missing_variables": {
+    "update": {
+      "description": false
+    }
+  },
+  "success": {
+    "insert": {
+      "description": "Category 1"
+    },
+    "select": {
+      "id": 1
+    },
+    "update": {
+      "id": 1,
+      "description": "Category 1"
+    },
+    "delete": {
+      "id": 1
+    }
+  }
+}
