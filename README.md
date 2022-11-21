@@ -1,40 +1,68 @@
 # CRUD BACKEND
 
-### Initial settings
+This version currently supports:
 
-```shell
-$ yarn init -y
-$ yarn add typescript @types/node ts-node-dev -D
-$ npx tsc --init
+- Knex
+- MySQL
+
+## Create table script
+
+```sql
+CREATE TABLE `category` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `description` varchar(45) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `description_UNIQUE` (`description`)
+) ENGINE=InnoDB
 ```
 
-### **tsconfig.json** updates
-
-```json
-"target": "es2020",
-"rootDir": "./src",
-"outDir": "./dist",
-```
-
-### **package.json** updates in **scripts** tag
-
-```json
-"dev": "ts-node-dev src/app.ts",
-```
-
-### Install and configure **express**
+## Endpoint test
 
 ```
-$ yarn add express
-$ yarn add -D @types/express
+http://localhost:8080
 ```
 
-## Development script
+## Basic database operations and testing.
 
+### Examples
+
+> Insert
+
+```sh
+curl --location --request POST 'http://localhost:8080/knex/category' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "description": "Category 1"
+}'
 ```
-$ yarn dev
+
+> Update
+
+```sh
+curl --location --request PUT 'http://localhost:8080/knex/category' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id": 1,
+    "description": "Category 1.0"
+}'
 ```
 
-> References
+### Select all
 
-- https://blog.soaresdev.com/como-criar-projeto-nodejs-expressjs-e-typescript/
+```sh
+curl --location --request GET 'http://localhost:8080/knex/category'
+```
+
+### Select by code
+
+```sh
+curl --location --request GET 'http://localhost:8080/knex/category/1'
+```
+
+### Delete
+
+```sh
+curl --location --request DELETE 'http://localhost:8080/knex/category/1'
+```
