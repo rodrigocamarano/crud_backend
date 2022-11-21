@@ -67,12 +67,12 @@ describe('KNEX', () => {
         });
       });
     });
-    describe('Success success', () => {
+    describe('Data statement', () => {
       beforeAll(async () => {
         await knex.truncate(table);
         await knex.raw(`ALTER TABLE ${table} AUTO_INCREMENT = 1 ;`);
       });
-      it('Insert', (done) => {
+      it('Successfully insert', (done) => {
         supertest(server)
           .post(`/knex/${table}`)
           .send(success.insert)
@@ -95,7 +95,7 @@ describe('KNEX', () => {
             done();
           });
       });
-      it('Select all', (done) => {
+      it('Successfully select all', (done) => {
         supertest(server)
           .get(`/knex/${table}`)
           .expect(200)
@@ -104,7 +104,7 @@ describe('KNEX', () => {
             done();
           });
       });
-      it('Select by code', (done) => {
+      it('Successfully select by code', (done) => {
         supertest(server)
           .get(`/knex/${table}/${success.select.id}`)
           .expect(200)
@@ -113,7 +113,7 @@ describe('KNEX', () => {
             done();
           });
       });
-      it('Update', (done) => {
+      it('Successfully update', (done) => {
         supertest(server)
           .put(`/knex/${table}`)
           .send(success.update)
@@ -124,7 +124,7 @@ describe('KNEX', () => {
             done();
           });
       });
-      it('Delete', (done) => {
+      it('Successfully delete', (done) => {
         supertest(server)
           .delete(`/knex/${table}/${success.delete.id}`)
           .expect(200)
