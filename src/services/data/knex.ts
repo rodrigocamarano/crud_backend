@@ -48,16 +48,10 @@ class Data {
           .select(this.params?.select?.columns)
           .where(column, operator, value)
           .then((rows) => rows)
-          .catch((err) => {
-            throw err;
-          })
       : await knexInstance
           .from(this.table)
           .select(this.params?.select?.columns)
-          .then((rows) => rows)
-          .catch((err) => {
-            throw err;
-          });
+          .then((rows) => rows);
     return result;
   }
 
@@ -71,10 +65,7 @@ class Data {
     const result = await knexInstance
       .from(this.table)
       .insert(this.params.insert)
-      .then((rows) => rows)
-      .catch((err) => {
-        throw err;
-      });
+      .then((rows) => rows);
     return result;
   }
 
@@ -89,10 +80,7 @@ class Data {
       .from(this.table)
       .update(this.params.update)
       .where(column, operator, value)
-      .then((rows) => rows)
-      .catch((err) => {
-        throw err;
-      });
+      .then((rows) => rows);
     return result;
   }
 
@@ -106,11 +94,16 @@ class Data {
       .from(this.table)
       .delete()
       .where(column, operator, value)
-      .then((rows) => rows)
-      .catch((err) => {
-        throw err;
-      });
+      .then((rows) => rows);
     return result;
+  }
+
+  static async truncate(table: string) {
+    await knexInstance.from(table).truncate();
+  }
+
+  static async raw(raw: string) {
+    await knexInstance.schema.raw(raw);
   }
 }
 
