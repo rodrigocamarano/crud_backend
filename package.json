@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "ts-node-dev src/app.ts",
-    "test": "jest --setupFiles dotenv/config"
+    "test": "jest --detectOpenHandles --setupFiles dotenv/config --forceExit"
   },
   "license": "MIT",
   "devDependencies": {
